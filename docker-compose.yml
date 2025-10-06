@@ -24,7 +24,7 @@ services:
       - "3307:3306"
     environment:
       # CLAVE DE SEGURIDAD:
-      # La contraseña se encuentra en el punto 1.8 de la Parte II del documento de entrega (.docx)
+      # La contraseña se encuentra en el punto 1.8 de la Parte II del documento de entrega (.pdf)
       MYSQL_ROOT_PASSWORD: 
       MYSQL_DATABASE: Estudio
     networks:
