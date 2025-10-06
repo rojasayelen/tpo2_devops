@@ -93,6 +93,7 @@ try {
 
 -   `Dockerfile`: Define la imagen personalizada para el servicio web (Apache + PHP).
 -   `docker-compose.yml`: Orquesta la creación y conexión de todos los contenedores y redes.
+
 ---
 
 ## ✒️ Autora
