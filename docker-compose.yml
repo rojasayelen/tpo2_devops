@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  # 1. Servicio de la Aplicación Web (PHP/Apache)
+  web:
+    container_name: mi-servidor-web-AyelenRojas
+    # Usa la imagen que ya construiste y subiste a Docker Hub
+    image: ayelenrojas/mi-app-devops:v1 
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/var/www/html
+    networks:
+      - red-Estudio-app
+    depends_on:
+      - db
+    restart: always
+
+  # 2. Servicio de la Base de Datos (MySQL)
+  db:
+    container_name: estudioRVP
+    image: mysql:latest
+    ports:
+      - "3307:3306"
+    environment:
+      # CLAVE DE SEGURIDAD:
+      # La contraseña se encuentra en el punto 1.8 de la Parte II del documento de entrega (.docx)
+      MYSQL_ROOT_PASSWORD: 
+      MYSQL_DATABASE: Estudio
+    networks:
+      - red-Estudio-app
+    restart: always
+
+# 3. Red compartida
+networks:
+  red-Estudio-app:
+    driver: bridge
